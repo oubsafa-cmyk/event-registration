@@ -1,0 +1,68 @@
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dg5000004tHqj" method="POST" id="btp-form">
+
+<input type=hidden name="oid" value="00Dg5000004tHqj">
+
+<input type=hidden name="retURL" value="https://TONUSERNAME.github.io/event-registration/merci.html">
+
+<input type="hidden" id="event_field" name="Target_Event_ID__c" value="">
+
+<label for="salutation">Salutation</label>
+<select id="salutation" name="salutation">
+<option value="">--None--</option>
+<option value="Mr.">Mr.</option>
+<option value="Ms.">Ms.</option>
+</select><br>
+
+<label for="first_name">First Name</label>
+<input id="first_name" name="first_name" type="text" /><br>
+
+<label for="last_name">Last Name</label>
+<input id="last_name" name="last_name" type="text" /><br>
+
+<label for="email">Email</label>
+<input id="email" name="email" type="text" /><br>
+
+<label for="mobile">Mobile</label>
+<input id="mobile" name="mobile" type="text" /><br>
+
+<label for="industry">Industry</label>
+<select id="industry" name="industry">
+<option value="Construction">Construction</option>
+<option value="Engineering">Engineering</option>
+<option value="Communications">Communications</option>
+<option value="Electronics">Electronics</option>
+<option value="Energy">Energy</option>
+<option value="Technology">Technology</option>
+<option value="Telecommunications">Telecommunications</option>
+<option value="Transportation">Transportation</option>
+<option value="Other">Other</option>
+</select><br>
+
+<label for="company">Company</label>
+<input id="company" name="company" type="text" /><br>
+
+<label for="city">City</label>
+<input id="city" name="city" type="text" /><br>
+
+<input type="submit" name="submit" value="S'inscrire à l'événement">
+
+</form>
+
+<script>
+window.onload = function() {
+
+const urlParams = new URLSearchParams(window.location.search);
+const eventIdFromUrl = urlParams.get('eventid');
+
+if (eventIdFromUrl) {
+
+document.getElementById('event_field').value = eventIdFromUrl;
+
+console.log("ID de l'événement détecté : " + eventIdFromUrl);
+
+}
+
+};
+</script>
