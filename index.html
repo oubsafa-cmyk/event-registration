@@ -1,58 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Inscription - Salon BTP 2026</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 30px 40px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .header img {
+        max-width: 150px;
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+    .header h1 {
+        text-align: center;
+        color: #0a3d62;
+        margin-bottom: 10px;
+    }
+    .header p {
+        text-align: center;
+        color: #4a4a4a;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    form label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+    form input, form select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+    }
+    form input[type="submit"] {
+        background-color: #0a3d62;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 25px;
+        transition: background-color 0.3s ease;
+    }
+    form input[type="submit"]:hover {
+        background-color: #064273;
+    }
+</style>
+</head>
+<body>
 
-<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+<div class="container">
 
-<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dg5000004tHqj" method="POST" id="btp-form">
+    <!-- Logo et titre -->
+    <div class="header">
+        <img src="b8d1ee75-ec45-4d51-8df6-560113ad2d37.png" alt="Logo Société BTP">
+        <h1>Salon BTP Innov 2026</h1>
+        <p>Bienvenue à notre événement du Vendredi 27 et Samedi 28 Juin 2026 !<br>
+        Remplissez le formulaire ci-dessous pour vous inscrire.</p>
+    </div>
 
-<input type=hidden name="oid" value="00Dg5000004tHqj">
-<input type=hidden name="retURL" value="https://oubsafa-cmyk.github.io/event-registration/merci.html">
+    <!-- Formulaire original avec style -->
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dg5000004tHqj" method="POST" id="btp-form">
+        <input type="hidden" name="oid" value="00Dg5000004tHqj">
+        <input type="hidden" name="retURL" value="https://oubsafa-cmyk.github.io/event-registration/merci.html">
+        <input type="hidden" id="event_field" name="Target_Event_ID__c" value="">
 
-<input type="hidden" id="event_field" name="Target_Event_ID__c" value="">
+        <label for="salutation">Salutation</label>
+        <select id="salutation" name="salutation">
+            <option value="">--None--</option>
+            <option value="Mr.">Mr.</option>
+            <option value="Ms.">Ms.</option>
+        </select>
 
-<label for="salutation">Salutation</label>
-<select id="salutation" name="salutation">
-    <option value="">--None--</option>
-    <option value="Mr.">Mr.</option>
-    <option value="Ms.">Ms.</option>
-	
-</select><br>
+        <label for="first_name">Prénom</label>
+        <input id="first_name" name="first_name" type="text" required>
 
-<label for="first_name">First Name</label><input id="first_name" name="first_name" type="text" /><br>
-<label for="last_name">Last Name</label><input id="last_name" name="last_name" type="text" /><br>
-<label for="email">Email</label><input id="email" name="email" type="text" /><br>
-<label for="mobile">Mobile</label><input id="mobile" name="mobile" type="text" /><br>
+        <label for="last_name">Nom</label>
+        <input id="last_name" name="last_name" type="text" required>
 
-<label for="industry">Industry</label>
-<select id="industry" name="industry">
-    <option value="Construction">Construction</option>
-    <option value="Engineering">Engineering</option>
-	<option value="Communications">Communications</option>
-	<option value="Electronics">Electronics</option>
-    <option value="Energy">Energy</option>
-	<option value="Technology">Technology</option>
-    <option value="Telecommunications">Telecommunications</option>
-    <option value="Transportation">Transportation</option>
-    <option value="Other">Other</option>
-</select><br>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
 
-<label for="company">Company</label><input id="company" name="company" type="text" /><br>
-<label for="city">City</label><input id="city" name="city" type="text" /><br>
+        <label for="mobile">Mobile</label>
+        <input id="mobile" name="mobile" type="text">
 
-<input type="submit" name="submit" value="S'inscrire à l'événement">
+        <label for="industry">Secteur d'activité</label>
+        <select id="industry" name="industry">
+            <option value="Construction">Construction</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Communications">Communications</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Energy">Energy</option>
+            <option value="Technology">Technology</option>
+            <option value="Telecommunications">Telecommunications</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Other">Other</option>
+        </select>
 
-</form>
+        <label for="company">Entreprise</label>
+        <input id="company" name="company" type="text">
+
+        <label for="city">Ville</label>
+        <input id="city" name="city" type="text">
+
+        <input type="submit" name="submit" value="S'inscrire à l'événement">
+    </form>
+
+</div>
 
 <script>
-    window.onload = function() {
-        // On cherche le paramètre "eventid" dans l'URL (ex: ?eventid=a01...)
-        const urlParams = new URLSearchParams(window.location.search);
-        const eventIdFromUrl = urlParams.get('eventid');
-
-        // Si l'ID est trouvé, on le met dans le champ caché
-        if (eventIdFromUrl) {
-            document.getElementById('event_field').value = eventIdFromUrl;
-            console.log("ID de l'événement détecté et chargé : " + eventIdFromUrl);
-        } else {
-            console.warn("Attention : Aucun ID d'événement n'a été trouvé dans l'URL.");
-        }
-    };
+window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const eventIdFromUrl = urlParams.get('eventid');
+    if (eventIdFromUrl) {
+        document.getElementById('event_field').value = eventIdFromUrl;
+        console.log("ID de l'événement détecté et chargé : " + eventIdFromUrl);
+    }
+};
 </script>
+
+</body>
+</html>
